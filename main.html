@@ -21,8 +21,7 @@
 	document.querySelector('form').addEventListener('submit', function(event) {
 	  event.preventDefault(); // to prevent the form from submitting normally
   // your logic here
-});
-const age=document.getElementById('age').value.trim();
+		const age=document.getElementById('age').value.trim();
 const name=document.getElementById('name').value.trim();
 	if (name === "" || age === "") {
         alert("Both fields are required.");
@@ -42,6 +41,8 @@ new Promise((resolve,reject)=>{
 	.then((message) => alert(message))
     .catch((error) => alert(error));
 });
+});
+
 
 	  </script>
   </body>
