@@ -18,7 +18,11 @@
 	</form>
 	  <script type="text/javascript">
 		  //your JS code here. If required.
-const age=document.getElemetById('age').value.trim();
+	document.querySelector('form').addEventListener('submit', function(event) {
+	  event.preventDefault(); // to prevent the form from submitting normally
+  // your logic here
+});
+const age=document.getElementById('age').value.trim();
 const name=document.getElementById('name').value.trim();
 	if (name === "" || age === "") {
         alert("Both fields are required.");
