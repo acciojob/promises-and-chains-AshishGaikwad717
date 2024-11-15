@@ -1,14 +1,21 @@
 //your JS code here. If required.
-let age=document.getElemetById('age');
-let name=document.getElementById('name');
-let promise=new Promise((resolve,reject)=>{
+const age=document.getElemetById('age').value.trim();
+const name=document.getElementById('name').value.trim();
+	if (name === "" || age === "") {
+        alert("Both fields are required.");
+        return;
+      }
+const ageNumber = Number(age);
+new Promise((resolve,reject)=>{
 	setTimeout(()=>{
-		if(age>18){
+		if(ageNumber>18){
 			resolve(`welcome ${name}. You can vote.`);
 		}
 		else{
 			reject(`Oh sorry ${name}. You aren't old enough.`);
 		}
 	},4000);
+})
+	.then((message) => alert(message))
+    .catch((error) => alert(error));
 });
-promise.then((res)=>window.alert(res)).catch((rej)=>window.alert(rej));
